@@ -44,6 +44,7 @@ const {
   Hypercerts,
   Holonym,
   Idena,
+  Etherscore,
 } = stampPlatforms;
 
 import { PlatformProps } from "../components/GenericPlatform";
@@ -187,6 +188,10 @@ platforms.set("Coinbase", {
     redirectUri: process.env.NEXT_PUBLIC_PASSPORT_COINBASE_CALLBACK,
   }),
   platFormGroupSpec: Coinbase.ProviderConfig,
+});
+platforms.set("Etherscore", {
+  platform: new Etherscore.EtherscorePlatform(),
+  platFormGroupSpec: Etherscore.ProviderConfig,
 });
 
 if (process.env.NEXT_PUBLIC_FF_HYPERCERT_STAMP === "on") {
